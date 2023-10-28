@@ -26,7 +26,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [Book store] <a name="about-project"></a>
+# 📖 [Book Library] <a name="about-project"></a>
 
 **[Book Library]** "Book library" is a application for book users to read and manage their books progressively.
 
