@@ -4,6 +4,7 @@ const BookForm = () => (
   <div className="form-section">
     <form>
       <input type="text" id="bookTitle" className="form-input" name="bookTitle" placeholder="Book title" />
+      <input type="text" id="Author" className="form-input" name="Author" placeholder="Author name" />
       <select id="genre" className="form-input" name="genre">
         <option value="fantasy">Fantasy</option>
         <option value="science-fiction">Science Fiction</option>
