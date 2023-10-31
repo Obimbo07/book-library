@@ -1,20 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
-const BookForm = () => (
-  <div className="form-section">
-    <form>
-      <input type="text" id="bookTitle" className="form-input" name="bookTitle" placeholder="Book title" />
-      <input type="text" id="Author" className="form-input" name="Author" placeholder="Author name" />
-      <select id="genre" className="form-input" name="genre">
-        <option value="fantasy">Fantasy</option>
-        <option value="science-fiction">Science Fiction</option>
-        <option value="mystery">Mystery</option>
-        <option value="romance">Romance</option>
-        <option value="horror">Horror</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-);
+const BookForm = () => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title && author) {
+      const newBook = {
+        item_id: Date.now(),
+        title,
+        author,
+      };
+      dispatch(addBook(newBook));
+      setTitle('');
+      setAuthor('');
+    }
+  };
+
+  return (
+    <div className="BookForm">
+      <h3>Add New Book</h3>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter Book Name"
+          value={title}
+          onChange={handleTitleChange}
+        />
+        <input
+          type="text"
+          placeholder="Enter Author Name"
+          value={author}
+          onChange={handleAuthorChange}
+        />
+        <button className="AddBook" type="submit">
+          Add Book
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default BookForm;
