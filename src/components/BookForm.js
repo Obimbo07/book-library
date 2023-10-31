@@ -18,7 +18,6 @@ const BookForm = () => {
     e.preventDefault();
     if (title && author) {
       const newBook = {
-        item_id: Date.now(),
         title,
         author,
       };
