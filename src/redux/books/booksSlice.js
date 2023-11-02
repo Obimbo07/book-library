@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/qFGIAu5467sPlr449Jtw/books';
@@ -7,7 +6,6 @@ const initialState = {
   books: [],
   isLoading: false,
 };
-
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await axios.get(baseUrl);
@@ -26,14 +24,15 @@ export const addBook = createAsyncThunk('books/addBook', async (newBook) => {
   }
 });
 
-export const removeBook = createAsyncThunk('books/removeBook', async (item_id) => {
+export const removeBook = createAsyncThunk('books/removeBook', async (itemId) => {
   try {
-    await axios.delete(`${baseUrl}/${item_id}`);
-    return item_id;
+    await axios.delete(`${baseUrl}/${itemId}`);
+    return itemId;
   } catch (err) {
     throw new Error(err);
   }
 });
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
@@ -45,9 +44,9 @@ const booksSlice = createSlice({
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         const bookData = action.payload;
-        const bookArray = Object.keys(bookData).map((item_id) => ({
-          item_id,
-          ...bookData[item_id][0],
+        const bookArray = Object.keys(bookData).map((itemId) => ({
+          itemId,
+          ...bookData[itemId][0],
         }));
         state.isLoading = false;
         state.books = bookArray;
@@ -72,7 +71,7 @@ const booksSlice = createSlice({
       .addCase(removeBook.fulfilled, (state, action) => {
         const ItemIdtoRemove = action.payload;
         state.isLoading = false;
-        state.books = state.books.filter((book) => book.item_id !== ItemIdtoRemove);
+        state.books = state.books.filter((book) => book.itemId !== ItemIdtoRemove);
       })
       .addCase(removeBook.rejected, (state) => {
         state.isLoading = false;
@@ -80,4 +79,4 @@ const booksSlice = createSlice({
   },
 });
 
-export default booksSlice;
+export default booksSlice.reducer;

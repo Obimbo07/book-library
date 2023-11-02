@@ -1,51 +1,41 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
 
 const BookForm = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const dispatch = useDispatch();
+  const [category, setCategory] = useState('fantasy');
 
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
-  };
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (title && author) {
-      const newBook = {
-        title,
-        author,
-      };
-      dispatch(addBook(newBook));
-      setTitle('');
-      setAuthor('');
-    }
+    const newBook = {
+      itemId: uuidv4(),
+      title,
+      category,
+      author,
+    };
+    dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
+    setCategory('fantasy');
   };
-
   return (
-    <div className="BookForm">
-      <h3>Add New Book</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter Book Name"
-          value={title}
-          onChange={handleTitleChange}
-        />
-        <input
-          type="text"
-          placeholder="Enter Author Name"
-          value={author}
-          onChange={handleAuthorChange}
-        />
-        <button className="AddBook" type="submit">
-          Add Book
-        </button>
+    <div className="form-section">
+      <form onSubmit={handleFormSubmit}>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="bookTitle" className="form-input" name="bookTitle" placeholder="Book title" />
+        <input value={author} onChange={(e) => setAuthor(e.target.value)} type="text" id="author" className="form-input" name="author" placeholder="Author name" />
+        <select id="genre" className="form-input" name="genre" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="fantasy">Fantasy</option>
+          <option value="science">Science</option>
+          <option value="mystery">Mystery</option>
+          <option value="romance">Romance</option>
+          <option value="action">Action</option>
+          <option value="technology">Technology</option>
+        </select>
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
