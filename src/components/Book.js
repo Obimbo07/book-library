@@ -33,7 +33,7 @@ function Book({ book, removeBook }) {
           </div>
         </div>
         <div className="Chapter-bar">
-          <span className="Current-Chapter">Current Chapter</span>
+          <span className="Current-Chapter">Current Chapter:</span>
           <span className="Current-Lesson">Chapter 17</span>
           <div className="Rectangle"><span className="update-progress">Update progress</span></div>
         </div>
