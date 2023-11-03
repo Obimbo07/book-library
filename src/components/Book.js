@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Book({ book, removeBook }) {
   return (
     <div>
-      <div className="book-section" key={book.itemId}>
+      <div className="book-section" key={book.item_id}>
         <div className="book-innerSection">
           <span className="book-category">{book.category}</span>
           <p className="book-title">{book.title}</p>
@@ -12,7 +12,7 @@ function Book({ book, removeBook }) {
           <div className="btn-container">
             <button type="button" className="btn">Comment</button>
             <div className="line" />
-            <button type="button" className="btn" onClick={() => removeBook(book.itemId)}>Remove</button>
+            <button type="button" className="btn" onClick={() => removeBook(book.item_id)}>Remove</button>
             <div className="line" />
             <button type="button" className="btn">Edit</button>
           </div>
@@ -24,7 +24,7 @@ function Book({ book, removeBook }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    itemId: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,

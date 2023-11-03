@@ -24,10 +24,10 @@ export const addBook = createAsyncThunk('books/addBook', async (newBook) => {
   }
 });
 
-export const removeBook = createAsyncThunk('books/removeBook', async (itemId) => {
+export const removeBook = createAsyncThunk('books/removeBook', async (item_id) => {
   try {
-    await axios.delete(`${baseUrl}/${itemId}`);
-    return itemId;
+    await axios.delete(`${baseUrl}/${item_id}`);
+    return item_id;
   } catch (err) {
     throw new Error(err);
   }
@@ -44,9 +44,9 @@ const booksSlice = createSlice({
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         const bookData = action.payload;
-        const bookArray = Object.keys(bookData).map((itemId) => ({
-          itemId,
-          ...bookData[itemId][0],
+        const bookArray = Object.keys(bookData).map((item_id) => ({
+          item_id,
+          ...bookData[item_id][0],
         }));
         state.isLoading = false;
         state.books = bookArray;
@@ -71,7 +71,7 @@ const booksSlice = createSlice({
       .addCase(removeBook.fulfilled, (state, action) => {
         const ItemIdtoRemove = action.payload;
         state.isLoading = false;
-        state.books = state.books.filter((book) => book.itemId !== ItemIdtoRemove);
+        state.books = state.books.filter((book) => book.item_id !== ItemIdtoRemove);
       })
       .addCase(removeBook.rejected, (state) => {
         state.isLoading = false;

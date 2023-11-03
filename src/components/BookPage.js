@@ -10,13 +10,13 @@ const BookPage = () => {
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
-  const deleteHandler = (itemId) => {
-    dispatch(removeBook(itemId));
+  const deleteHandler = (item_id) => {
+    dispatch(removeBook(item_id));
   };
   return (
     <>
       {books.map((book) => (
-        <Book key={book.itemId} book={book} removeBook={() => deleteHandler(book.itemId)} />
+        <Book key={book.item_id} book={book} removeBook={() => deleteHandler(book.item_id)} />
       ))}
       <Bookform />
     </>
