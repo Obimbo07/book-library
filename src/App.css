@@ -173,3 +173,7 @@
   text-align: center;
   color: #ffff;
 }
+
+.rmv {
+  cursor: pointer;
+}

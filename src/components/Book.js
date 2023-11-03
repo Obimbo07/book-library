@@ -12,7 +12,7 @@ function Book({ book, removeBook }) {
           <div className="btn-container">
             <button type="button" className="btn">Comment</button>
             <div className="line" />
-            <button type="button" className="btn" onClick={() => removeBook(book.item_id)}>Remove</button>
+            <button type="button" className="btn rmv" onClick={() => removeBook(book.item_id)}>Remove</button>
             <div className="line" />
             <button type="button" className="btn">Edit</button>
           </div>
