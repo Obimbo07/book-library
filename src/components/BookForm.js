@@ -24,7 +24,8 @@ const BookForm = () => {
   };
   return (
     <div className="form-section">
-      <form onSubmit={handleFormSubmit}>
+      <h2>ADD BOOK NEW</h2>
+      <form className="form" onSubmit={handleFormSubmit}>
         <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="bookTitle" className="form-input" name="bookTitle" placeholder="Book title" />
         <input value={author} onChange={(e) => setAuthor(e.target.value)} type="text" id="author" className="form-input" name="author" placeholder="Author name" />
         <select id="genre" className="form-input" name="genre" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -35,7 +36,7 @@ const BookForm = () => {
           <option value="Action">Action</option>
           <option value="Technology">Technology</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button className="addbtn" type="submit">Add Book</button>
       </form>
     </div>
   );
