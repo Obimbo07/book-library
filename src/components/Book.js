@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 function Book({ book, removeBook }) {
   return (
     <div>
-      <div className="book-section" key={book.itemId}>
+      <div className="book-section" key={book.item_id}>
         <div className="book-innerSection">
           <span className="book-category">{book.category}</span>
           <h5 className="book-title">{book.title}</h5>
@@ -15,7 +15,7 @@ function Book({ book, removeBook }) {
           <div className="btn-container">
             <button type="button" className="btn">Comment</button>
             <div className="line" />
-            <button type="button" className="btn" onClick={() => removeBook(book.itemId)}>Remove</button>
+            <button type="button" className="btn" onClick={() => removeBook(book.item_id)}>Remove</button>
             <div className="line" />
             <button type="button" className="btn">Edit</button>
 
@@ -24,18 +24,21 @@ function Book({ book, removeBook }) {
         <div className="progress-bar">
           <div className="progress-container">
             <div style={{ width: 70, height: 70 }}>
-              <CircularProgressbar value={1} />
+              <CircularProgressbar value={22} />
             </div>
           </div>
           <div className="text">
-            <span className="Percent-Complete">2%</span>
+            <span className="Percent-Complete">22%</span>
             <span className="Percent-Complete1">Completed</span>
           </div>
-        </div>
-        <div className="Chapter-bar">
-          <span className="Current-Chapter">Current Chapter:</span>
-          <span className="Current-Lesson">Chapter 17</span>
-          <div className="Rectangle"><span className="update-progress">Update progress</span></div>
+          <div className="progress-divider" />
+          <div className="Chapter-bar">
+            <span className="Chapter-title">CURRENT CHAPTER:</span>
+            <span className="Current-Chapter">Chapter 12: Introduction</span>
+            <div>
+              <button type="button" className="update-progress">UPDATE PROGRESS</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -44,10 +47,10 @@ function Book({ book, removeBook }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    itemId: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    category: PropTypes.string,
   }).isRequired,
   removeBook: PropTypes.func.isRequired,
 };
