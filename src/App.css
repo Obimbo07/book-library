@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0 0 8%;
   border-radius: 4px;
-  box-shadow: 0 0 60px 0 rgba(0,0,0,.05);
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
 }
 
@@ -37,16 +37,16 @@ body {
 
 .nav-links {
   display: flex;
-    flex-grow: 1;
-    list-style-type: none;
-    grid-gap: 40px;
-    gap: 40px;
+  flex-grow: 1;
+  list-style-type: none;
+  grid-gap: 40px;
+  gap: 40px;
 }
 
 .navlink {
-  opacity: .5;
-  font-family: "Montserrat",sans-serif;
-  font-size: .813rem;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
   color: #121212;
   letter-spacing: 1.9px;
 }
@@ -92,9 +92,9 @@ body {
 
 .form-title {
   font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -.18px;
-    color: #888;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .form-section {
@@ -114,21 +114,22 @@ body {
 
 .form-input {
   padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #e8e8e8;
-    background-color: #fff;
-    font-size: 1rem;
-    letter-spacing: -.15px;
-    color: #121212;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: #121212;
 }
 
-.input-title{ 
+.input-title {
   width: 50%;
 }
 
 .category-input {
- width: 30%;
+  width: 30%;
 }
+
 .addbtn {
   cursor: pointer;
   width: 20%;
@@ -136,17 +137,17 @@ body {
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: #fff;
-  font-size: .813rem;
+  font-size: 0.813rem;
   font-weight: 700;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .book-title {
   width: fit-content;
   height: 1.813rem;
-  margin: 0.188rem 10.0rem 0 0;
+  margin: 0.188rem 10rem 0 0;
   font-family: RobotoSlab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
@@ -200,9 +201,9 @@ body {
 
 .line {
   width: 0.125rem;
-    height: 1.5rem;
-    background-color: #e8e8e8;
-    margin: 0 1rem;
+  height: 1.5rem;
+  background-color: #e8e8e8;
+  margin: 0 1rem;
 }
 
 .progress-bar {
@@ -213,9 +214,9 @@ body {
 
 .progress-divider {
   width: 0.125rem;
-    height: 4.375rem;
-    margin: 0 3.688rem 0 4.938rem;
-    background-color: #e8e8e8;
+  height: 4.375rem;
+  margin: 0 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
 }
 
 .Percent-Complete {
@@ -223,16 +224,14 @@ body {
 }
 
 .Percent-Complete1 {
-  font-size: .875rem;
-  opacity: .5;
+  font-size: 0.875rem;
+  opacity: 0.5;
 }
 
 .text {
   display: flex;
   flex-direction: column;
 }
-
-
 
 .Rectangle {
   width: 11.5rem;
@@ -249,10 +248,10 @@ body {
 }
 
 .Chapter-title {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   color: #121212;
-  font-size: .813rem;
-  opacity: .5;
+  font-size: 0.813rem;
+  opacity: 0.5;
 }
 
 .update-progress {
@@ -261,9 +260,9 @@ body {
   background-color: #0290ff;
   border-radius: 3px;
   padding: 8px 24px;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 300;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: #fff;
 }
 
