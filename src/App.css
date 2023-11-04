@@ -39,8 +39,14 @@ body {
   display: flex;
   flex-grow: 1;
   list-style-type: none;
+  text-decoration: none;
   grid-gap: 40px;
   gap: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .navlink {
@@ -49,6 +55,8 @@ body {
   font-size: 0.813rem;
   color: #121212;
   letter-spacing: 1.9px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .active {
