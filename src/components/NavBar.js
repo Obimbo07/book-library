@@ -17,6 +17,9 @@ const NavBar = () => {
           </li>
         ))}
       </div>
+      <button className="icon-button" type="button">
+        <span className="material-icons primary-color">person</span>
+      </button>
     </div>
   );
 };

@@ -16,10 +16,13 @@ const BookPage = () => {
   };
   return (
     <>
-      {books.map((book) => (
-        <Book key={book.item_id} book={book} removeBook={() => deleteHandler(book.item_id)} />
-      ))}
-      <Bookform />
+      <div className="container">
+        {books.map((book) => (
+          <Book key={book.item_id} book={book} removeBook={() => deleteHandler(book.item_id)} />
+        ))}
+        <div className="horizontal-divider" />
+        <Bookform />
+      </div>
     </>
   );
 };
